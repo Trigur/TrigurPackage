@@ -2,10 +2,6 @@
 
 namespace TrigurPackage\Traits;
 
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
-
 trait ArrayMethodsTrait
 {
     protected function _idToKey($array)
