@@ -51,5 +51,5 @@ abstract class AbstractAdminControllersLoader extends \BaseAdminController
         return $string;
     }
 
-    abstract protected function _dirname(){}
+    abstract protected function _dirname();
 }
