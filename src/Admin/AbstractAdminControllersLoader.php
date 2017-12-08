@@ -2,8 +2,6 @@
 
 namespace TrigurPackage\Admin;
 
-(defined('BASEPATH')) OR exit('No direct script access allowed');
-
 abstract class AbstractAdminControllersLoader extends \BaseAdminController
 {
     protected static $moduleName;
