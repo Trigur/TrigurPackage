@@ -1,6 +1,6 @@
 {
     "name": "trigur/trigurpackage",
-    "description": "My package for ImageCMS ",
+    "description": "My package for ImageCMS",
     "minimum-stability": "stable",
     "keywords": [
         "ImageCMS"
