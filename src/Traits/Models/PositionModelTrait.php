@@ -2,10 +2,6 @@
 
 namespace TrigurPackage\Traits\Models;
 
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
-
 trait PositionModelTrait
 {
     public function changePosition($id, $position)
