@@ -19,7 +19,7 @@ abstract class AbstractAdminControllersLoader extends \BaseAdminController
             redirect(static::$basePath);
         }
 
-        $moduleName = $this->toCamelCase(static::$moduleNam);
+        $moduleName = $this->toCamelCase(static::$moduleName);
 
         $className = $moduleName . 'Admin' . ucfirst($controllerNameSegment) . 'Controller';
         $classFile = __DIR__ . '/admin/' . $className . '.php';
