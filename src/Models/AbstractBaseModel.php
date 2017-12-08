@@ -2,11 +2,7 @@
 
 namespace TrigurPackage\Models;
 
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
-
-abstract class AbstractBaseModel extends CI_Model {
+abstract class AbstractBaseModel extends \CI_Model {
     protected static $table;
 
     public static function getTableName()
