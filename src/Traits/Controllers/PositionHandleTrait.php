@@ -2,10 +2,6 @@
 
 namespace TrigurPackage\Traits\Controllers;
 
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
-
 trait PositionHandleTrait
 {
     public function savePositions()
