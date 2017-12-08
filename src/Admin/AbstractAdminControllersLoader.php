@@ -19,10 +19,10 @@ abstract class AbstractAdminControllersLoader extends \BaseAdminController
             redirect(static::$basePath);
         }
 
-        $moduleName = $this->toCamelCase(static::$moduleName);
+        $moduleName = $this->_toCamelCase(static::$moduleName);
 
         $className = $moduleName . 'Admin' . ucfirst($controllerNameSegment) . 'Controller';
-        $classFile = __DIR__ . '/admin/' . $className . '.php';
+        $classFile = $this->_dirname() . '/admin/' . $className . '.php';
 
         if (! file_exists($classFile)) {
             redirect(static::$basePath);
@@ -43,11 +43,13 @@ abstract class AbstractAdminControllersLoader extends \BaseAdminController
         }
     }
 
-    protected function toCamelCase($string)
+    protected function _toCamelCase($string)
     {
         $string = str_replace('_', ' ', $string);
         $string = ucwords($string);
         $string = str_replace(' ', '', $string);
         return $string;
     }
+
+    abstract protected function _dirname(){}
 }
