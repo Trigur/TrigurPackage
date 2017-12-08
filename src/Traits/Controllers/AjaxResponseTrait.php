@@ -1,5 +1,7 @@
 <?php
 
+namespace TrigurPackage\Traits\Controllers;
+
 trait AjaxResponseTrait
 {
     protected function _ajaxResponse($status = null, $message = null, $data = null)
