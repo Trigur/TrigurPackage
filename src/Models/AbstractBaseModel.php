@@ -22,15 +22,27 @@ abstract class AbstractBaseModel extends \CI_Model {
         return $this->getRowBy('id', $id);
     }
 
-    public function getRowBy($field, $value)
+    public function getRowBy($field, $value = null)
     {
-        $this->db->where($field, $value);
+        if (is_array($field)) {
+            $this->db->where($field);
+        }
+        else {
+            $this->db->where($field, $value);
+        }
+
         return $this->db->get(static::$table)->row_array();
     }
 
-    public function getAllBy($field, $value)
+    public function getAllBy($field, $value = null)
     {
-        $this->db->where($field, $value);
+        if (is_array($field)) {
+            $this->db->where($field);
+        }
+        else {
+            $this->db->where($field, $value);
+        }
+
         return $this->db->get(static::$table)->result_array();
     }
 
@@ -44,6 +56,12 @@ abstract class AbstractBaseModel extends \CI_Model {
     public function update($id, $data)
     {
         $this->db->where('id', $id);
+        $this->db->update(static::$table, $data);
+    }
+
+    public function updateBy($whereArray, $data)
+    {
+        $this->db->where($whereArray);
         $this->db->update(static::$table, $data);
     }
 
